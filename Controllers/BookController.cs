@@ -14,4 +14,11 @@ public class BookController: ControllerBase
     {
         this._context = context;
     }
+
+    [HttpGet]
+
+    public IEnumerable <Book> Get ()
+    {
+            return _context.Books.ToList();
+    }
 }
