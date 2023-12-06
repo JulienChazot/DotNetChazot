@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using newWebAPI.Models;
@@ -12,9 +13,12 @@ public class BookController: ControllerBase
 {
     private readonly AppDbContext _context;
 
-    public BookController(AppDbContext context)
+    private readonly IMapper _mapper;
+
+    public BookController(AppDbContext context, IMapper mapper)
     {
         _context = context;
+        _mapper = mapper;
     }
 
     [HttpGet]
