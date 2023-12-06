@@ -1,5 +1,7 @@
 
 using newWebAPI.Models;
+using System.Reflection;
+using System;
 
 namespace newWebAPI;
 
@@ -13,12 +15,19 @@ public class Program
     
         builder.Services.AddDbContext<AppDbContext>();
         builder.Services.AddControllers();
-        builder.Services.AddAutoMapper(typeof(AppDomain.CurrentDomain.GetAssemblies()));
+        //builder.Services.AddAutoMapper(typeof(AppDomain.CurrentDomain.GetAssembly()));
+        builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
         var app = builder.Build();
+
+        // var configuration = new MapperConfiguration(cfg => 
+        // {
+        //     cfg.CreateMap<Foo, FooDto>();
+        //     cfg.CreateMap<Bar, BarDto>();
+        // });
 
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())

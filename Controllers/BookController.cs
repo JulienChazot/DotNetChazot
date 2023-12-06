@@ -79,7 +79,7 @@ public class BookController: ControllerBase
 
     [HttpPut("{id}", Name = nameof(GetBook))]
 
-    public async Task<ActionResult<string>> Edit([FromBody]string? autor, int id)
+    public async Task<ActionResult<Book>> Edit([FromBody]string? autor, int id)
     {
         if (autor == null)
         {
@@ -99,7 +99,7 @@ public class BookController: ControllerBase
         // si non tu decides!!!
 
         await _context.SaveChangesAsync();
-        return "Changé";
+        return _mapper.Map<Book>(myBook);
     }
 
 
