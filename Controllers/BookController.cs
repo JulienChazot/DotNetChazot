@@ -101,15 +101,15 @@ public class BookController: ControllerBase
     // }
 
     [HttpDelete("{id}", Name = nameof(GetBook))]
-    public async Task<ActionResult<string>> Delete(int? Id)
+    public async Task<ActionResult<string>> Delete(int? id)
     {
-        if (Id == null)
+        if (id == null)
         {
             return BadRequest("Il n'y a pas d'ID");
         }
 
         // check que le livre existe
-        var myBook = await _context.Books.FindAsync(Id);
+        var myBook = await _context.Books.FindAsync(id);
         // si oui le mettre a jour 
         if (myBook != null) 
         {
