@@ -36,6 +36,17 @@ public class BookController: ControllerBase
         return book;
     }
 
+    // public async Task<ActionResult<Book>> GetBookAutor (string autor)
+    // {
+    //     var book = await _context.Books.FindAsync(autor);
+    //     if (book == null)
+    //     {
+    //         return NotFound();
+    //     }
+        
+    //     return book;
+    // }
+
     [HttpPost]
     [ProducesResponseType(201, Type = typeof(Book))]
     [ProducesResponseType(400)]
@@ -63,8 +74,53 @@ public class BookController: ControllerBase
         }
     }
 
-    // TODO : PUT : api/book/[id] creer la route qui permet de mettre a jour un livre existant
-    // TODO: DELETE : api/book/[id] supprimer un livre
 
+    // [HttpPut("{autor}", Name = nameof(GetBookAutor))]
 
+    // public async Task<ActionResult<Book>> Edit(string? autor)
+    // {
+    //     if (autor == null)
+    //     {
+    //         return BadRequest("Il n'y a pas d'auteur");
+    //     }
+
+    //     // check que le livre existe
+    //     var myBook = await _context.Books.FindAsync(autor);
+    //     // si oui le mettre a jour 
+    //     if (myBook != null) 
+    //     {
+    //         var test = _context.Update(autor);
+    //     } else 
+    //     {
+    //         return BadRequest("le livre n'existe pas!");
+    //     }
+    //     // si non tu decides!!!
+
+    //     await _context.SaveChangesAsync();
+    //     return myBook;
+    // }
+
+    [HttpDelete("{id}", Name = nameof(GetBook))]
+    public async Task<ActionResult<string>> Delete(int? Id)
+    {
+        if (Id == null)
+        {
+            return BadRequest("Il n'y a pas d'ID");
+        }
+
+        // check que le livre existe
+        var myBook = await _context.Books.FindAsync(Id);
+        // si oui le mettre a jour 
+        if (myBook != null) 
+        {
+            var test = _context.Remove(myBook);
+        } else 
+        {
+            return BadRequest("le livre n'existe pas!");
+        }
+        // si non tu decides!!!
+
+        await _context.SaveChangesAsync();
+        return  "Supprime avec succes!";
+    }
 }
