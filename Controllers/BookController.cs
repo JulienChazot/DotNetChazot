@@ -75,30 +75,32 @@ public class BookController: ControllerBase
     }
 
 
-    // [HttpPut("{autor}", Name = nameof(GetBookAutor))]
+    [HttpPut("{id}", Name = nameof(GetBook))]
 
-    // public async Task<ActionResult<Book>> Edit(string? autor)
-    // {
-    //     if (autor == null)
-    //     {
-    //         return BadRequest("Il n'y a pas d'auteur");
-    //     }
+    public async Task<ActionResult<string>> Edit([FromBody]string? autor, int id)
+    {
+        if (autor == null)
+        {
+            return BadRequest("Il n'y a pas d'auteur");
+        }
 
-    //     // check que le livre existe
-    //     var myBook = await _context.Books.FindAsync(autor);
-    //     // si oui le mettre a jour 
-    //     if (myBook != null) 
-    //     {
-    //         var test = _context.Update(autor);
-    //     } else 
-    //     {
-    //         return BadRequest("le livre n'existe pas!");
-    //     }
-    //     // si non tu decides!!!
+        // check que le livre existe
+        var myBook = await _context.Books.FirstOrDefaultAsync(b => b.Autor == autor);
+        // si oui le mettre a jour 
+        if (myBook != null) 
+        {
+            var test = _context.Update(myBook);
+        } else 
+        {
+            return BadRequest("le livre n'existe pas!");
+        }
+        // si non tu decides!!!
 
-    //     await _context.SaveChangesAsync();
-    //     return myBook;
-    // }
+        await _context.SaveChangesAsync();
+        return "Changé";
+    }
+
+
 
     [HttpDelete("{id}", Name = nameof(GetBook))]
     public async Task<ActionResult<string>> Delete(int? id)
@@ -116,11 +118,11 @@ public class BookController: ControllerBase
             var test = _context.Remove(myBook);
         } else 
         {
-            return BadRequest("le livre n'existe pas!");
+            return BadRequest("le livre n'éxiste pas");
         }
         // si non tu decides!!!
 
         await _context.SaveChangesAsync();
-        return  "Supprime avec succes!";
+        return  "Supprimé avec succès!";
     }
 }
