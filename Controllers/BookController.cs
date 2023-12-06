@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using newWebAPI.Models;
+using newWebAPI.Models.DTOs;
 
 namespace newWebAPI.Controllers;
 
@@ -24,6 +25,7 @@ public class BookController: ControllerBase
     }
 
     [HttpGet("{id}", Name = nameof(GetBook))]
+    [ProducesResponseType(200, Type = typeof(BookDetailDTO))]
 
     public async Task<ActionResult<Book>> GetBook (int id)
     {
@@ -36,44 +38,40 @@ public class BookController: ControllerBase
         return book;
     }
 
-    // public async Task<ActionResult<Book>> GetBookAutor (string autor)
-    // {
-    //     var book = await _context.Books.FindAsync(autor);
-    //     if (book == null)
-    //     {
-    //         return NotFound();
-    //     }
-        
-    //     return book;
-    // }
+    
 
     [HttpPost]
     [ProducesResponseType(201, Type = typeof(Book))]
     [ProducesResponseType(400)]
-
     public async Task<ActionResult<Book>> PostBook([FromBody] Book book)
     {
+        // we check if the parameter is null
         if (book == null)
         {
-            return BadRequest("L'objet book est nul dans le post");
+            return BadRequest();
         }
+        // we check if the book already exists
         Book? addedBook = await _context.Books.FirstOrDefaultAsync(b => b.Title == book.Title);
         if (addedBook != null)
         {
-            return BadRequest("L'objet book existe déjà");
+            return BadRequest("Book already exists");
         }
-        else {
+        else
+        {
+            // we add the book to the database
             await _context.Books.AddAsync(book);
             await _context.SaveChangesAsync();
 
+            // we return the book
             return CreatedAtRoute(
                 routeName: nameof(GetBook),
-                routeValues: new { id = book.Id},
+                routeValues: new { id = book.Id },
                 value: book);
-            
+
         }
     }
-
+    // TODO: utilisez des annotations pour valider les donnees entrantes avec ModelState
+    // TODO: utilisez le package AutoMapper pour mapper les donnees de BookUpdateDTO vers Book
 
     [HttpPut("{id}", Name = nameof(GetBook))]
 

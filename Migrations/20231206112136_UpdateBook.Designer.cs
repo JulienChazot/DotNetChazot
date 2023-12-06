@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using newWebAPI.Models;
 
@@ -10,9 +11,11 @@ using newWebAPI.Models;
 namespace newWebAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231206112136_UpdateBook")]
+    partial class UpdateBook
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.0");
@@ -75,90 +78,90 @@ namespace newWebAPI.Migrations
                         {
                             Id = 1,
                             Autor = "Christian Nagel",
-                            CreatedAt = new DateTime(2023, 12, 6, 12, 45, 20, 202, DateTimeKind.Local).AddTicks(6211),
+                            CreatedAt = new DateTime(2023, 12, 6, 12, 21, 35, 645, DateTimeKind.Local).AddTicks(5530),
                             CreatedBy = "",
-                            DeletedAt = new DateTime(2023, 12, 6, 12, 45, 20, 202, DateTimeKind.Local).AddTicks(6264),
+                            DeletedAt = new DateTime(2023, 12, 6, 12, 21, 35, 645, DateTimeKind.Local).AddTicks(5589),
                             Description = "A true masterclass in C# and .NET programming",
                             Genre = "Software",
                             Price = 50m,
                             PublishDate = new DateTime(2016, 5, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Professional C# 6 and .NET Core 1.0",
-                            UpdatedAt = new DateTime(2023, 12, 6, 12, 45, 20, 202, DateTimeKind.Local).AddTicks(6262),
+                            UpdatedAt = new DateTime(2023, 12, 6, 12, 21, 35, 645, DateTimeKind.Local).AddTicks(5588),
                             UpdatedBy = ""
                         },
                         new
                         {
                             Id = 2,
                             Autor = "Christian Nagel",
-                            CreatedAt = new DateTime(2023, 12, 6, 12, 45, 20, 202, DateTimeKind.Local).AddTicks(6277),
+                            CreatedAt = new DateTime(2023, 12, 6, 12, 21, 35, 645, DateTimeKind.Local).AddTicks(5600),
                             CreatedBy = "",
-                            DeletedAt = new DateTime(2023, 12, 6, 12, 45, 20, 202, DateTimeKind.Local).AddTicks(6280),
+                            DeletedAt = new DateTime(2023, 12, 6, 12, 21, 35, 645, DateTimeKind.Local).AddTicks(5604),
                             Description = "A true masterclass in C# and .NET programming",
                             Genre = "Software",
                             Price = 50m,
                             PublishDate = new DateTime(2018, 4, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Professional C# 7 and .NET Core 2.0",
-                            UpdatedAt = new DateTime(2023, 12, 6, 12, 45, 20, 202, DateTimeKind.Local).AddTicks(6278),
+                            UpdatedAt = new DateTime(2023, 12, 6, 12, 21, 35, 645, DateTimeKind.Local).AddTicks(5602),
                             UpdatedBy = ""
                         },
                         new
                         {
                             Id = 3,
                             Autor = "Christian Nagel",
-                            CreatedAt = new DateTime(2023, 12, 6, 12, 45, 20, 202, DateTimeKind.Local).AddTicks(6284),
+                            CreatedAt = new DateTime(2023, 12, 6, 12, 21, 35, 645, DateTimeKind.Local).AddTicks(5608),
                             CreatedBy = "",
-                            DeletedAt = new DateTime(2023, 12, 6, 12, 45, 20, 202, DateTimeKind.Local).AddTicks(6287),
+                            DeletedAt = new DateTime(2023, 12, 6, 12, 21, 35, 645, DateTimeKind.Local).AddTicks(5611),
                             Description = "A true masterclass in C# and .NET programming",
                             Genre = "Software",
                             Price = 50m,
                             PublishDate = new DateTime(2019, 10, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Professional C# 8 and .NET Core 3.0",
-                            UpdatedAt = new DateTime(2023, 12, 6, 12, 45, 20, 202, DateTimeKind.Local).AddTicks(6286),
+                            UpdatedAt = new DateTime(2023, 12, 6, 12, 21, 35, 645, DateTimeKind.Local).AddTicks(5610),
                             UpdatedBy = ""
                         },
                         new
                         {
                             Id = 4,
                             Autor = "Christian Nagel",
-                            CreatedAt = new DateTime(2023, 12, 6, 12, 45, 20, 202, DateTimeKind.Local).AddTicks(6290),
+                            CreatedAt = new DateTime(2023, 12, 6, 12, 21, 35, 645, DateTimeKind.Local).AddTicks(5617),
                             CreatedBy = "",
-                            DeletedAt = new DateTime(2023, 12, 6, 12, 45, 20, 202, DateTimeKind.Local).AddTicks(6293),
+                            DeletedAt = new DateTime(2023, 12, 6, 12, 21, 35, 645, DateTimeKind.Local).AddTicks(5620),
                             Description = "A true masterclass in C# and .NET programming",
                             Genre = "Software",
                             Price = 50m,
                             PublishDate = new DateTime(2021, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Professional C# 9 and .NET 5",
-                            UpdatedAt = new DateTime(2023, 12, 6, 12, 45, 20, 202, DateTimeKind.Local).AddTicks(6292),
+                            UpdatedAt = new DateTime(2023, 12, 6, 12, 21, 35, 645, DateTimeKind.Local).AddTicks(5619),
                             UpdatedBy = ""
                         },
                         new
                         {
                             Id = 5,
                             Autor = "Perkins, Reid, and Hammer",
-                            CreatedAt = new DateTime(2023, 12, 6, 12, 45, 20, 202, DateTimeKind.Local).AddTicks(6297),
+                            CreatedAt = new DateTime(2023, 12, 6, 12, 21, 35, 645, DateTimeKind.Local).AddTicks(5623),
                             CreatedBy = "",
-                            DeletedAt = new DateTime(2023, 12, 6, 12, 45, 20, 202, DateTimeKind.Local).AddTicks(6300),
+                            DeletedAt = new DateTime(2023, 12, 6, 12, 21, 35, 645, DateTimeKind.Local).AddTicks(5627),
                             Description = "The perfect guide to Visual C#",
                             Genre = "Software",
                             Price = 45m,
                             PublishDate = new DateTime(2020, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Beginning Visual C# 2019",
-                            UpdatedAt = new DateTime(2023, 12, 6, 12, 45, 20, 202, DateTimeKind.Local).AddTicks(6298),
+                            UpdatedAt = new DateTime(2023, 12, 6, 12, 21, 35, 645, DateTimeKind.Local).AddTicks(5625),
                             UpdatedBy = ""
                         },
                         new
                         {
                             Id = 6,
                             Autor = "Andrew Troelsen",
-                            CreatedAt = new DateTime(2023, 12, 6, 12, 45, 20, 202, DateTimeKind.Local).AddTicks(6303),
+                            CreatedAt = new DateTime(2023, 12, 6, 12, 21, 35, 645, DateTimeKind.Local).AddTicks(5630),
                             CreatedBy = "",
-                            DeletedAt = new DateTime(2023, 12, 6, 12, 45, 20, 202, DateTimeKind.Local).AddTicks(6306),
+                            DeletedAt = new DateTime(2023, 12, 6, 12, 21, 35, 645, DateTimeKind.Local).AddTicks(5633),
                             Description = "The ultimate C# resource",
                             Genre = "Software",
                             Price = 50m,
                             PublishDate = new DateTime(2017, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Pro C# 7",
-                            UpdatedAt = new DateTime(2023, 12, 6, 12, 45, 20, 202, DateTimeKind.Local).AddTicks(6305),
+                            UpdatedAt = new DateTime(2023, 12, 6, 12, 21, 35, 645, DateTimeKind.Local).AddTicks(5632),
                             UpdatedBy = ""
                         });
                 });
