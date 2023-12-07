@@ -83,6 +83,48 @@ public class AppDbContext : DbContext
                 Price = 50,
                 PublishDate = new DateTime(2017, 10, 01)
             });
+
+            modelBuilder.Entity<Film>().HasData(
+                new Film{
+                    Id = 1,
+                    Title = "Mon Premier Film",
+                    Autor = "MonPremierAuteur",
+                    Description = "Pas mal",
+                    Genre = "Animé",
+                    Price = 15,
+                    PublishDate = new DateTime(2017, 10, 01),
+                    Commande = 20,
+                    Stock = 3,
+                    Duree = new DateTime (2017, 10 ,2)
+                },
+                new Film{
+                    Id = 2,
+                    Title = "Mon Deuxieme Film",
+                    Autor = "MonDeuxiemeAuteur",
+                    Description = "Tres bien",
+                    Genre = "Animé",
+                    Price = 15,
+                    PublishDate = new DateTime(2012, 10, 01),
+                    Commande = 5,
+                    Stock = 1,
+                    Duree = new DateTime (2014, 10 ,2)
+                },
+                new Film{
+                    Id = 3,
+                    Title = "Mon Troisieme Film",
+                    Autor = "MonTroisiemeAuteur",
+                    Description = "OK",
+                    Genre = "Action",
+                    Price = 35,
+                    PublishDate = new DateTime(2017, 08, 01),
+                    Commande = 28,
+                    Stock = 9,
+                    Duree = new DateTime (2017, 05 ,2)
+                }
+            );
     }
+
+    
     public DbSet<Book> Books { get; set; } = default!;
+    public DbSet<Film> Films { get; set; } = default!;
 }

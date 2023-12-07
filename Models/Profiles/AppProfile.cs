@@ -9,6 +9,6 @@ public class AppProfile: Profile
     public AppProfile()
     {
         CreateMap<Book, BookDetailDTO>().ReverseMap();
-        
+        CreateMap<Film, FilmDetailDTO>().ReverseMap();
     }
 }

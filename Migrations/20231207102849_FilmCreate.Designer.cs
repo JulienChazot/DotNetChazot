@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using newWebAPI.Models;
 
@@ -10,9 +11,11 @@ using newWebAPI.Models;
 namespace newWebAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231207102849_FilmCreate")]
+    partial class FilmCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.0");
@@ -75,90 +78,90 @@ namespace newWebAPI.Migrations
                         {
                             Id = 1,
                             Autor = "Christian Nagel",
-                            CreatedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1194),
+                            CreatedAt = new DateTime(2023, 12, 7, 11, 28, 49, 117, DateTimeKind.Local).AddTicks(2411),
                             CreatedBy = "",
-                            DeletedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1243),
+                            DeletedAt = new DateTime(2023, 12, 7, 11, 28, 49, 117, DateTimeKind.Local).AddTicks(2471),
                             Description = "A true masterclass in C# and .NET programming",
                             Genre = "Software",
                             Price = 50m,
                             PublishDate = new DateTime(2016, 5, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Professional C# 6 and .NET Core 1.0",
-                            UpdatedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1241),
+                            UpdatedAt = new DateTime(2023, 12, 7, 11, 28, 49, 117, DateTimeKind.Local).AddTicks(2468),
                             UpdatedBy = ""
                         },
                         new
                         {
                             Id = 2,
                             Autor = "Christian Nagel",
-                            CreatedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1256),
+                            CreatedAt = new DateTime(2023, 12, 7, 11, 28, 49, 117, DateTimeKind.Local).AddTicks(2485),
                             CreatedBy = "",
-                            DeletedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1260),
+                            DeletedAt = new DateTime(2023, 12, 7, 11, 28, 49, 117, DateTimeKind.Local).AddTicks(2488),
                             Description = "A true masterclass in C# and .NET programming",
                             Genre = "Software",
                             Price = 50m,
                             PublishDate = new DateTime(2018, 4, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Professional C# 7 and .NET Core 2.0",
-                            UpdatedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1258),
+                            UpdatedAt = new DateTime(2023, 12, 7, 11, 28, 49, 117, DateTimeKind.Local).AddTicks(2486),
                             UpdatedBy = ""
                         },
                         new
                         {
                             Id = 3,
                             Autor = "Christian Nagel",
-                            CreatedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1265),
+                            CreatedAt = new DateTime(2023, 12, 7, 11, 28, 49, 117, DateTimeKind.Local).AddTicks(2492),
                             CreatedBy = "",
-                            DeletedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1269),
+                            DeletedAt = new DateTime(2023, 12, 7, 11, 28, 49, 117, DateTimeKind.Local).AddTicks(2495),
                             Description = "A true masterclass in C# and .NET programming",
                             Genre = "Software",
                             Price = 50m,
                             PublishDate = new DateTime(2019, 10, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Professional C# 8 and .NET Core 3.0",
-                            UpdatedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1267),
+                            UpdatedAt = new DateTime(2023, 12, 7, 11, 28, 49, 117, DateTimeKind.Local).AddTicks(2494),
                             UpdatedBy = ""
                         },
                         new
                         {
                             Id = 4,
                             Autor = "Christian Nagel",
-                            CreatedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1273),
+                            CreatedAt = new DateTime(2023, 12, 7, 11, 28, 49, 117, DateTimeKind.Local).AddTicks(2499),
                             CreatedBy = "",
-                            DeletedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1276),
+                            DeletedAt = new DateTime(2023, 12, 7, 11, 28, 49, 117, DateTimeKind.Local).AddTicks(2502),
                             Description = "A true masterclass in C# and .NET programming",
                             Genre = "Software",
                             Price = 50m,
                             PublishDate = new DateTime(2021, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Professional C# 9 and .NET 5",
-                            UpdatedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1274),
+                            UpdatedAt = new DateTime(2023, 12, 7, 11, 28, 49, 117, DateTimeKind.Local).AddTicks(2500),
                             UpdatedBy = ""
                         },
                         new
                         {
                             Id = 5,
                             Autor = "Perkins, Reid, and Hammer",
-                            CreatedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1279),
+                            CreatedAt = new DateTime(2023, 12, 7, 11, 28, 49, 117, DateTimeKind.Local).AddTicks(2505),
                             CreatedBy = "",
-                            DeletedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1282),
+                            DeletedAt = new DateTime(2023, 12, 7, 11, 28, 49, 117, DateTimeKind.Local).AddTicks(2508),
                             Description = "The perfect guide to Visual C#",
                             Genre = "Software",
                             Price = 45m,
                             PublishDate = new DateTime(2020, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Beginning Visual C# 2019",
-                            UpdatedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1281),
+                            UpdatedAt = new DateTime(2023, 12, 7, 11, 28, 49, 117, DateTimeKind.Local).AddTicks(2507),
                             UpdatedBy = ""
                         },
                         new
                         {
                             Id = 6,
                             Autor = "Andrew Troelsen",
-                            CreatedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1285),
+                            CreatedAt = new DateTime(2023, 12, 7, 11, 28, 49, 117, DateTimeKind.Local).AddTicks(2512),
                             CreatedBy = "",
-                            DeletedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1289),
+                            DeletedAt = new DateTime(2023, 12, 7, 11, 28, 49, 117, DateTimeKind.Local).AddTicks(2515),
                             Description = "The ultimate C# resource",
                             Genre = "Software",
                             Price = 50m,
                             PublishDate = new DateTime(2017, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Pro C# 7",
-                            UpdatedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1287),
+                            UpdatedAt = new DateTime(2023, 12, 7, 11, 28, 49, 117, DateTimeKind.Local).AddTicks(2513),
                             UpdatedBy = ""
                         });
                 });
@@ -223,7 +226,7 @@ namespace newWebAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Films");
+                    b.ToTable("Film");
 
                     b.HasData(
                         new
@@ -231,9 +234,9 @@ namespace newWebAPI.Migrations
                             Id = 1,
                             Autor = "MonPremierAuteur",
                             Commande = 20,
-                            CreatedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1463),
+                            CreatedAt = new DateTime(2023, 12, 7, 11, 28, 49, 119, DateTimeKind.Local).AddTicks(5863),
                             CreatedBy = "",
-                            DeletedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1467),
+                            DeletedAt = new DateTime(2023, 12, 7, 11, 28, 49, 119, DateTimeKind.Local).AddTicks(5889),
                             Description = "Pas mal",
                             Duree = new DateTime(2017, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Genre = "Animé",
@@ -241,7 +244,7 @@ namespace newWebAPI.Migrations
                             PublishDate = new DateTime(2017, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Stock = 3,
                             Title = "Mon Premier Film",
-                            UpdatedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1466),
+                            UpdatedAt = new DateTime(2023, 12, 7, 11, 28, 49, 119, DateTimeKind.Local).AddTicks(5887),
                             UpdatedBy = ""
                         },
                         new
@@ -249,9 +252,9 @@ namespace newWebAPI.Migrations
                             Id = 2,
                             Autor = "MonDeuxiemeAuteur",
                             Commande = 5,
-                            CreatedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1476),
+                            CreatedAt = new DateTime(2023, 12, 7, 11, 28, 49, 119, DateTimeKind.Local).AddTicks(5899),
                             CreatedBy = "",
-                            DeletedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1479),
+                            DeletedAt = new DateTime(2023, 12, 7, 11, 28, 49, 119, DateTimeKind.Local).AddTicks(5902),
                             Description = "Tres bien",
                             Duree = new DateTime(2014, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Genre = "Animé",
@@ -259,7 +262,7 @@ namespace newWebAPI.Migrations
                             PublishDate = new DateTime(2012, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Stock = 1,
                             Title = "Mon Deuxieme Film",
-                            UpdatedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1477),
+                            UpdatedAt = new DateTime(2023, 12, 7, 11, 28, 49, 119, DateTimeKind.Local).AddTicks(5900),
                             UpdatedBy = ""
                         },
                         new
@@ -267,9 +270,9 @@ namespace newWebAPI.Migrations
                             Id = 3,
                             Autor = "MonTroisiemeAuteur",
                             Commande = 28,
-                            CreatedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1484),
+                            CreatedAt = new DateTime(2023, 12, 7, 11, 28, 49, 119, DateTimeKind.Local).AddTicks(5907),
                             CreatedBy = "",
-                            DeletedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1487),
+                            DeletedAt = new DateTime(2023, 12, 7, 11, 28, 49, 119, DateTimeKind.Local).AddTicks(5910),
                             Description = "OK",
                             Duree = new DateTime(2017, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Genre = "Action",
@@ -277,7 +280,7 @@ namespace newWebAPI.Migrations
                             PublishDate = new DateTime(2017, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Stock = 9,
                             Title = "Mon Troisieme Film",
-                            UpdatedAt = new DateTime(2023, 12, 7, 11, 39, 57, 760, DateTimeKind.Local).AddTicks(1485),
+                            UpdatedAt = new DateTime(2023, 12, 7, 11, 28, 49, 119, DateTimeKind.Local).AddTicks(5909),
                             UpdatedBy = ""
                         });
                 });
