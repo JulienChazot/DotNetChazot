@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using newWebAPI.Models;
 using newWebAPI.Models.DTOs;
+using newWebAPI.Models.Profiles;
 
 namespace newWebAPI.Controllers;
 
@@ -17,7 +18,15 @@ public class BookController: ControllerBase
 
     public BookController(AppDbContext context, IMapper mapper)
     {
+
         _context = context;
+        var cfg = new MapperConfiguration(config => {
+            config.AddProfile<AppProfile>();
+        });
+        var configuration = new MapperConfiguration(cfg => 
+        {
+            cfg.CreateMap<AppProfile, IMapper>();
+        });
         _mapper = mapper;
     }
 
@@ -79,7 +88,7 @@ public class BookController: ControllerBase
 
     [HttpPut("{id}", Name = nameof(GetBook))]
 
-    public async Task<ActionResult<Book>> Edit([FromBody]string? autor, int id)
+    public async Task<ActionResult<BookDetailDTO>> Edit([FromBody]string? autor, int id)
     {
         if (autor == null)
         {
@@ -99,7 +108,7 @@ public class BookController: ControllerBase
         // si non tu decides!!!
 
         await _context.SaveChangesAsync();
-        return _mapper.Map<Book>(myBook);
+        return _mapper.Map<BookDetailDTO>(myBook);
     }
 
 
